@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Display View Database";
+    string[] TableHeaders = new string[]
+    {
+        " ",
+        " ",
+        " ",
+        " "
+    };
+}
+<div class="container-fluid">
+    <h3 class="mt-4">Tampilan View dari Table No.4</h3>
+
+    <div class="table table-bordered table-hover">
+        <table>
+            <thead>
+                <tr>
+                    @{
+                        foreach (var head in TableHeaders)
+                        {
+                            <th>
+                                @head
+                            </th>
+                        }
+                    }
+                </tr>
+            </thead>
+            @{
+                if(Model != null)
+                {
+                    foreach(var Data in Model)
+                    {
+                        <tr>
+                            <td>@Data.c1Code1</td>
+                            <td>@Data.c1Name</td>
+                            <td>@Data.c2Code2</td>
+                            <td>@Data.c2Name</td>
+                        </tr>
+                    } 
+                }
+            }
+            
+        </table>
+    </div>
+</div>
